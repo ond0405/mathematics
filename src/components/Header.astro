@@ -1,3 +1,147 @@
-<header style="background: #008000; color: white; padding: 1rem;">
-  <strong>小学算数徹底攻略</strong>
+<!-- ヘッダーであることを示すタグ -->
+<header class="header">
+  <!-- ヘッダーのタイトルにホーム画面に戻るリンクを埋め込み -->
+  <a href="/" class="header-link">
+    <!-- SEOやスクリーンリーダーに重要と思わせるためのタグ -->
+    <strong>小学算数徹底攻略</strong>
+  </a>
+
+  <!-- メニュー関連 -->
+  <div class="menu-container">
+    <!-- ハンバーガーメニューボタン aria-labelはスクリーンリーダー用 -->
+    <button class="menu-button" aria-label="メニューを開く">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- ボタンを押したら出てくるメニューの中身 -->
+    <nav class="mobile-menu">
+      <ul>
+        <li><a href="/grade1">1年生の算数</a></li>
+        <li><a href="/grade2">2年生の算数</a></li>
+        <li><a href="/calculation">計算ドリル</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
+
+<style>
+  /* headerタグに効くCSS */
+  .header {
+    background: #008000; /* 色指定 */
+    padding: 0 1rem; /* 左右 1rem */
+    height: 100px; /* 高さ指定 */
+    display: flex; /* headerタグに囲まれた中身のものを柔軟に動かせるように */
+    position: relative; /* 基準点づくり */
+    justify-content: space-between; /* 中身のものの間にスペースを入れて分ける */
+    align-items: center; /*ヘッダーの縦幅の真ん中に要素を並べる*/
+  }
+
+  /* class="header-link"がついてるタグに効くCSS */
+  .header-link {
+    text-decoration: none; /* リンクにデフォルトでついてくる下線を削除 */
+    color: white; /* 色指定 */
+    display: flex; /* header-linkタグに囲まれた中身のものを柔軟に動かせるように */
+    align-items: center; /* header-linkの縦幅の真ん中に要素を並べる */
+  }
+
+  /* strongタグすべてではなく、class="header-link"がついてるタグの中にあるstrongに効くCSS */
+  .header-link strong {
+    font-size: 3rem; /* 文字サイズ指定 */
+    font-weight: bold; /* 文字太さ指定 */
+  }
+
+  /* class="header-link"がついてるタグの中身にカーソルを合わせたときに効くCSS */
+  .header-link:hover {
+    opacity: 0.8; /* 透明具合 */
+  }
+
+  /* class="menu-button"がついてるタグに効くCSS */
+  .menu-button {
+    background: none; /* ボタンの背景色を削除 */
+    border: none; /* ボタンの枠線を削除 */
+    cursor: pointer; /* カーソルを合わせたときに手のマークに変える */
+    width: 30px; /* ボタンの縦幅指定 */
+    height: 24px; /* ボタンの横幅指定 */
+    display: flex; /* 中身を柔軟に動かせるように */
+    flex-direction: column; /* 中身を縦並びにする */
+    justify-content: space-between; /* 中身のものの間にスペースを入れて分ける */
+    padding: 0; /* ボタンの内側のパディングを削除 */
+  }
+
+  /* spanタグすべてではなく、class="menu-button"がついてるタグの中にあるspanに効くCSS */
+  .menu-button span {
+    display: block; /* 可能な限り横に伸びたものが縦並びになる */
+    width: 100%; /* 親のmenu-buttonの横幅と同じ横幅 */
+    height: 3px; /* 縦幅(厚さ)3px */
+    background-color: white; /* 色指定 */
+    border-radius: 2px; /* 角を丸める */
+    transition: 0.3s; /* 見た目が変化する際に何秒かけて変化するか */
+  }
+
+  /* class="menu-button"がついてるタグにis-openがついてるときにclass="menu-button"がついてるタグにの中にある1番目のspanタグ */
+  .menu-button.is-open span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg); /* 10px下に動かして右に45°回転 */
+  }
+
+  /* class="menu-button"がついてるタグにis-openがついてるときにclass="menu-button"がついてるタグにの中にある2番目のspanタグ */
+  .menu-button.is-open span:nth-child(2) {
+    opacity: 0; /* 透明具合 */
+  }
+
+  /* class="menu-button"がついてるタグにis-openがついてるときにclass="menu-button"がついてるタグにの中にある3番目のspanタグ */
+  .menu-button.is-open span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg); /* 10px上に動かして左に45°回転 */
+  }
+
+  /* class="mobile-menu"がついてるタグに効くCSS */
+  .mobile-menu {
+    position: absolute; /* メニュー表示予定のところの位置に何かがあっても押しのけずに絶対にそこに表示 */
+    top: 100%; /* 一番近い親タグのpisition:relativeを基準にその親の上からの距離 */
+    right: 0; /* 一番近い親タグのpisition:relativeを基準にその親の右からの距離 */
+    width: 180px; /* 横幅指定 */
+    background-color: #008000; /* 背景色指定 */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* 白い透明度0.2の実線で囲む */
+    border-radius: 8px; /* 角丸め */
+    padding: 1rem; /* メニューの内側に余白 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* 周りにちょっと影つける */
+    display: none; /* 最初は非表示状態 */
+  }
+
+  /* class="menu-button is-open"を持つタグが現れたとき、class="mobile-menu"を持つタグに効くCSS */
+  .menu-button.is-open + .mobile-menu {
+    display: block; /* is-openが付与された、つまりクリックされたときに表示状態 */
+  }
+
+  /* class="mobile-menu"がついてるタグに挟まれているulタグに効くCSS */
+  .mobile-menu ul {
+    list-style: none; /* ulタグにデフォルトでついている箇条書きマークの・を非表示 */
+    padding: 0; /* ulタグにデフォルトでついている内側の余白を削除 */
+    margin: 0; /* ulタグにデフォルトでついている外側の余白を削除 */
+  }
+
+  /* class="mobile-menu"がついてるタグに挟まれているliタグに効くCSS */
+  .mobile-menu li {
+    margin: 10px 0; /* 各項目の外側上下に10pxの余白 */
+  }
+
+  /* class="mobile-menu"がついてるタグに挟まれているaタグに効くCSS */
+  .mobile-menu a {
+    color: white; /* 文字色指定 */
+    text-decoration: none; /* リンクにデフォルトでつく下線を削除 */
+    font-size: 1rem; /* 文字サイズ指定 */
+    display: block; /* 文字の横の空白もクリック対象に */
+  }
+</style>
+
+<script>
+  // HTMLの中からclass="menu-button"を探し、見つけたらその要素をDOM形式という形でmenuButtonに代入する。見つからなければnull代入。
+  const menuButton = document.querySelector(".menu-button");
+
+  // menuButtonがクリックされるまで見張るようになる。クリックされたら{}の中を実行。?はmenuButtonがnullじゃなければ見張ってという意味。
+  menuButton?.addEventListener("click", () => {
+    // class="menu-button"がついているタグのクラスを操作。class="is-open"がついてたら消し、ついてなかったらつける。
+    menuButton.classList.toggle("is-open");
+  });
+</script>

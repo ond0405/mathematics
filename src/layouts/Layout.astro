@@ -1,36 +1,57 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
+// titleにLayout.astroをimportした各ページから受け取ったtitleの値を代入。受け取るものがない場合はデフォルトで小学算数徹底攻略
 const { title = "小学算数徹底攻略" } = Astro.props;
 ---
 
 <html lang="ja">
-	<head>
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-5FVDM7DJ78"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
+  <head>
+    <!-- Googleアナリティクスを動かすのに必要なコード -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FVDM7DJ78"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-			gtag('config', 'G-5FVDM7DJ78');
-		</script>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
+      gtag("config", "G-5FVDM7DJ78");
+    </script>
+    <!-- 文字コード設定 -->
+    <meta charset="utf-8" />
+    <!-- ブラウザのタブに表示されるアイコン設定 -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <!-- スマホサイズに対応する設定 -->
+    <meta name="viewport" content="width=device-width" />
+    <!-- Astroが初期作成してくれたファイルである証拠 -->
+    <meta name="generator" content={Astro.generator} />
+    <!-- ブラウザのタブに表示されるタイトルであり、検索時に表示されるタイトルの設定 -->
+    <!-- {title}は上記に定義された値 -->
+    <title>{title}</title>
+  </head>
 
-	<body>
-		<Header />
-		
-		<main style="padding: 2rem; min-height: 60vh;">
-			<slot />
-		</main>
+  <body>
+    <!-- Header.astroをimportしたためHeaderタグを使えるようになり、Header.astroの中身がそのまま反映される -->
+    <Header />
 
-		<Footer />
-	</body>
+    <!-- メインコンテンツ 上下左右に2remのパディング、中身がスカスカでも画面縦幅の60%分はメインコンテンツ用の縦幅用意 -->
+    <!-- slotにはLayoutをimportした各ページの中身が入る -->
+    <main style="padding: 2rem; min-height: 60vh;">
+      <slot />
+    </main>
+    <!-- Footer.astroをimportしたためFooterタグを使えるようになり、Footer.astroの中身がそのまま反映される -->
+    <Footer />
+  </body>
 </html>
+
+<!-- Layout.astroをimportする全てのファイルに適用する -->
+<style is:global>
+  /* bodyタグにデフォルトでついているmargin 8pxを消す */
+  body {
+    margin: 0;
+  }
+</style>
