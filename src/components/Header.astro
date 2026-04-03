@@ -1,10 +1,14 @@
 <!-- ヘッダーであることを示すタグ -->
 <header class="header">
-  <!-- ヘッダーのタイトルにホーム画面に戻るリンクを埋め込み -->
-  <a href="/" class="header-link">
-    <!-- SEOやスクリーンリーダーに重要と思わせるためのタグ -->
-    <strong>小学算数徹底攻略</strong>
-  </a>
+  <section class="title">
+    <!-- ヘッダーのタイトルにホーム画面に戻るリンクを埋め込み -->
+    <a href="/" class="header-link">
+      <h1 class="main-title">
+        保護者の味方の<span>おうち算数</span>
+      </h1>
+      <p class="sub-title">～元塾講師が教える楽しい勉強～</p>
+    </a>
+  </section>
 
   <!-- メニュー関連 -->
   <div class="menu-container">
@@ -43,18 +47,31 @@
     text-decoration: none; /* リンクにデフォルトでついてくる下線を削除 */
     color: white; /* 色指定 */
     display: flex; /* header-linkタグに囲まれた中身のものを柔軟に動かせるように */
-    align-items: center; /* header-linkの縦幅の真ん中に要素を並べる */
-  }
-
-  /* strongタグすべてではなく、class="header-link"がついてるタグの中にあるstrongに効くCSS */
-  .header-link strong {
-    font-size: 3rem; /* 文字サイズ指定 */
-    font-weight: bold; /* 文字太さ指定 */
+    align-items: baseline; /* header-linkの中身の下端をそろえる */
   }
 
   /* class="header-link"がついてるタグの中身にカーソルを合わせたときに効くCSS */
   .header-link:hover {
     opacity: 0.8; /* 透明具合 */
+  }
+
+  /* h1タグがデフォルトだと文字が大きいからか、ヘッダーリンクを押したときに拡大するバグがあったから抑えるためのCSS */
+  headedr-link h1 {
+    font-size: 2.5rem; /* 文字サイズ指定 */
+  }
+
+  /* class="main-title"がついてるタグに効くCSS */
+  .main-title {
+    font-size: 2.5rem; /* 文字サイズ指定 */
+    font-weight: bold; /* 文字太さ指定 */
+    margin: 0;
+  }
+
+  /* class="sub-title"がついてるタグに効くCSS */
+  .sub-title {
+    font-size: 1rem; /* 文字サイズ指定 */
+    margin: 0;
+    margin-left: 0.5rem; /* メインとサブの間に空白 */
   }
 
   /* class="menu-button"がついてるタグに効くCSS */
