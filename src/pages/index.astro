@@ -3,8 +3,114 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <!-- Layoutタグの横でtitle=○○とするとLayout.astroに値が引き渡される -->
-<Layout title="小学算数徹底攻略">
-  <h1>TITLE</h1>
-  <p>ここは、算数を楽しく学ぶための場所です。</p>
-  <p>まずは「たし算」から始めてみよう！</p>
+<Layout title="保護者の味方のおうち算数">
+  <section class="introduction">
+    <h2>保護者の味方のおうち算数へようこそ！</h2>
+    <!-- 「こちら」をクリックするとabout画面に遷移 -->
+    <p>
+      本サイトが初めての方はぜひ
+      <a href="/about">こちら</a>
+      から！
+    </p>
+  </section>
+
+  <section class="elementary_school_1">
+    <h2>1年生</h2>
+  </section>
+
+  <section class="elementary_school_2">
+    <h2>2年生</h2>
+  </section>
+
+  <section class="elementary_school_3">
+    <h2>3年生</h2>
+  </section>
+
+  <section class="elementary_school_4">
+    <h2>4年生</h2>
+  </section>
+
+  <section class="elementary_school_5">
+    <h2>5年生</h2>
+    <div class="row">
+      <div class="col">
+        <ul class="content-list">
+          <li><a>整数と小数</a></li>
+          <li><a>直方体や立方体の体積</a></li>
+          <li><a>比例</a></li>
+          <li><a>小数のかけ算</a></li>
+          <li><a>小数のわり算</a></li>
+          <li><a>合同な図形</a></li>
+          <li><a>図形の角</a></li>
+          <li><a>偶数と奇数、倍数と約数</a></li>
+          <li><a>分数と小数、整数の関係</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <ul class="content-list">
+          <li><a>分数のたし算とひき算</a></li>
+          <li><a>平均</a></li>
+          <li><a>単位量あたりの大きさ</a></li>
+          <li><a>四角形と三角形の面積</a></li>
+          <li><a>割合</a></li>
+          <li><a>帯グラフと円グラフ</a></li>
+          <li><a>変わり方調べ</a></li>
+          <li><a>正多角形と円周の長さ</a></li>
+          <li><a>角柱と円柱</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="elementary_school_6">
+      <h2>6年生</h2>
+    </section>
+  </section>
+
+  <style>
+    /* class="introduction"に効くCSS */
+    .introduction {
+      margin-bottom: 3rem; /* sectionの下の外側にmarginを3remをつける */
+      padding: 1rem; /* フッターの内側にpadding 1remをつける */
+      text-align: center; /* 中身のコンテンツを中央ぞろえ */
+    }
+
+    /* class="row"に効くCSS */
+    .row {
+      display: flex; /* rowの中身を柔軟に動かせるように */
+      gap: 20px; /* 列同士の隙間 */
+    }
+
+    /* class="col"に効くCSS */
+    .col {
+      flex: 1; /* 左右を50%ずつの幅にする */
+    }
+
+    .content-list {
+      list-style: none; /* 箇条書きの点を消す */
+      padding: 0;
+      margin: 1;
+    }
+
+    .content-list li {
+      margin-bottom: 8px; /* 項目ごとの隙間 */
+    }
+
+    .content-list a {
+      display: block; /* 横幅いっぱいにクリック反応が広がる */
+      padding: 12px 15px; /* 上下左右にたっぷり余白を設けて「押しやすく」 */
+      background-color: #f0f7f0; /* 薄い緑で目に優しく */
+      color: #008000; /* リンクの色 */
+      text-decoration: none; /* 下線を消す */
+      border-radius: 6px; /* 角を少し丸める */
+      transition: background-color 0.2s; /* 変化を滑らかに */
+      border: 1px solid #e0eee0;
+    }
+
+    /* カーソルを合わせた時の動き */
+    .content-list a:hover {
+      background-color: #008000; /* 背景を濃い緑に */
+      color: white; /* 文字を白に */
+    }
+  </style>
 </Layout>
