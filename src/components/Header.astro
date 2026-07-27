@@ -55,12 +55,20 @@
 
   /* h1タグがデフォルトだと文字が大きいからか、ヘッダーリンクを押したときに拡大するバグがあったから抑えるためのCSS */
   headedr-link h1 {
-    font-size: 2.5rem; /* 文字サイズ指定 */
+    font-size: clamp(
+      1.25rem,
+      0.7955rem + 2.2727vw,
+      2.5rem
+    ); /* 文字サイズ指定 */
   }
 
   /* class="main-title"がついてるタグに効くCSS */
   .main-title {
-    font-size: 2.5rem; /* 文字サイズ指定 */
+    font-size: clamp(
+      1.25rem,
+      0.7955rem + 2.2727vw,
+      2.5rem
+    ); /* 文字サイズ指定 */
     font-weight: bold; /* 文字太さ指定 */
     margin: 0;
   }
@@ -75,24 +83,11 @@
       flex-direction: column; /* 中身を立て並びにする */
       align-items: baseline; /* header-linkの中身の下端をそろえる */
     }
-    .main-title {
-      font-size: 2rem; /* スマホに合わせてフォントサイズを小さくする */
-    }
-
-    /* 「保護者の味方の」と「おうち算数」の間で自然に改行させたい場合 */
-    .main-title span {
-      display: block; /* スマホでは「おうち算数」を改行して2行目にする */
-      font-size: 1.5rem; /* タイトル本体（おうち算数）を少し大きめに強調 */
-    }
-
-    .sub-title {
-      font-size: 0.75rem; /* サブタイトルも小さく調整 */
-    }
   }
 
   /* class="sub-title"がついてるタグに効くCSS */
   .sub-title {
-    font-size: 1rem; /* 文字サイズ指定 */
+    font-size: clamp(0.25rem, -0.0227rem + 1.3636vw, 1rem); /* 文字サイズ指定 */
     margin: 0;
     margin-left: 0.5rem; /* メインとサブの間に空白 */
   }
