@@ -67,6 +67,14 @@
 
   /* スマホ用の設定（画面幅が 600px 以下のとき） */
   @media (max-width: 600px) {
+    /* class="header-link"がついてるタグに効くCSS */
+    .header-link {
+      text-decoration: none; /* リンクにデフォルトでついてくる下線を削除 */
+      color: white; /* 色指定 */
+      display: flex; /* header-linkタグに囲まれた中身のものを柔軟に動かせるように */
+      flex-direction: column; /* 中身を立て並びにする */
+      align-items: baseline; /* header-linkの中身の下端をそろえる */
+    }
     .main-title {
       font-size: 1.2rem; /* スマホに合わせてフォントサイズを小さくする */
     }
