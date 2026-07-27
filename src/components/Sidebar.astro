@@ -1,0 +1,46 @@
+<!-- 重要ではない付属情報であることを示すタグ -->
+<aside class="sidebar">
+  <!-- ここが案内板だということがdivタグよりわかりやすくなる -->
+  <nav>
+    <h2>メニュー</h2>
+    <ul>
+      <li><a href="/">ホーム</a></li>
+      <li><a href="/#elementary_school_1">1年生</a></li>
+      <li><a href="/#elementary_school_2">2年生</a></li>
+      <li><a href="/#elementary_school_3">3年生</a></li>
+      <li><a href="/#elementary_school_4">4年生</a></li>
+      <li><a href="/#elementary_school_5">5年生</a></li>
+      <li><a href="/#elementary_school_6">6年生</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<style>
+  .sidebar {
+    background-color: #ffffff; /* サイドバー全体の背景色 */
+    padding: 30px; /* サイドバーの内側に30pxの余白 */
+    height: fit-content; /* サイドバーの中身の量に応じて高さを自動調節 */
+    position: sticky; /* スクロール追従 */
+    top: 20px;
+  }
+
+  .sidebar h2 {
+    margin-bottom: 12px; /* 下に12pxの余白 */
+    color: #008000; /* テキストの色 */
+  }
+
+  .sidebar ul {
+    list-style: none; /* 箇条書きの点削除 */
+    padding: 0; /* 項目の内側に空白0 */
+    margin: 0; /* 項目の外側に空白0 */
+  }
+
+  .sidebar a {
+    text-decoration: none; /* 下線ナシ */
+    color: #000000; /* テキストの色 */
+  }
+
+  .sidebar a:hover {
+    color: #008000; /* ホバー中のリンクの色 */
+  }
+</style>
