@@ -68,6 +68,16 @@ const { title = "保護者の味方のおうち算数" } = Astro.props;
     display: grid; /* Sidebarとmainが格子状のレイアウトになるように */
     grid-template-columns: 240px 1fr; /* 左のSidebarが固定240px、右のmainが残り全幅 */
   }
+
+  /* スマホ用の設定（画面幅が 600px 以下のとき） */
+  @media (max-width: 600px) {
+    .layout-container {
+      border: 3px solid #008000; /* 線の太さ 種類 色 */
+      padding: 10px 16px; /* 枠線と文字の間の余白 */
+      border-radius: 6px; /* 角を少し丸くする */
+      background-color: #ffffff;
+    }
+  }
 </style>
 
 <!-- Layout.astroをimportする全てのファイルに適用する -->
