@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import IntegersAndDecimalsExample1 from "../assets/images/IntegersAndDecimalsExample1.svg";
+import IntegersAndDecimalsAnswer1 from "../assets/images/IntegersAndDecimalsAnswer1.svg";
 ---
 
 <!-- Layoutタグの横でtitle=○○とするとLayout.astroに値が引き渡される -->
@@ -13,56 +14,39 @@ import IntegersAndDecimalsExample1 from "../assets/images/IntegersAndDecimalsExa
   <p>仕組みを理解するために、次の問題に取り組みましょう。</p>
   <br />
   <div class="question-card">
-    <p class="question-title">【問1】2.451の1の位の数字は何でしょう。</p>
+    <p class="question-title">
+      【問1】2.451の一の位、小数第一位、小数第二位、小数第三位の数字は何でしょう。
+    </p>
     <details class="answer-box">
       <summary>問1の解答を見る</summary>
       <div class="answer-content">
-        <p>答え：<strong>2</strong></p>
-        <p>解説：小数点のすぐ左隣の位が1の位である。</p>
-      </div>
-    </details>
-
-    <p class="question-title">【問2】2.451の小数第一位の数字は何でしょう。</p>
-    <details class="answer-box">
-      <summary>問2の解答を見る</summary>
-      <div class="answer-content">
-        <p>答え：<strong>4</strong></p>
-        <p>解説：小数点のすぐ右隣の位が小数第一位である。</p>
-      </div>
-    </details>
-
-    <p class="question-title">【問3】2.451の小数第二位の数字は何でしょう。</p>
-    <details class="answer-box">
-      <summary>問3の解答を見る</summary>
-      <div class="answer-content">
-        <p>答え：<strong>5</strong></p>
-        <p>解説：小数点の右隣の右隣の位が小数第二位である。</p>
-      </div>
-    </details>
-
-    <p class="question-title">【問4】2.451の小数第三位の数字は何でしょう。</p>
-    <details class="answer-box">
-      <summary>問4の解答を見る</summary>
-      <div class="answer-content">
-        <p>答え：<strong>1</strong></p>
-        <p>解説：小数点の右隣の右隣の右隣の位が小数第三位である。</p>
+        <p>
+          答え：一の位：<strong>2</strong>、小数第一位：<strong>4</strong
+          >、小数第二位：<strong>5</strong>、小数第三位：<strong>1</strong>
+        </p>
+        <p>解説：</p>
+        <Image
+          src={IntegersAndDecimalsAnswer1}
+          alt="問1解答画像"
+          class="diagram"
+        />
       </div>
     </details>
   </div>
   <br />
   <br />
   <p>
-    上記の問題をもとに、1の位、小数第一位、小数第二位、小数第三位に分けて考えると下の式のようになります。
+    上記の問題をもとに、一の位、小数第一位、小数第二位、小数第三位に分けて考えると下の式のようになります。
   </p>
   <Image src={IntegersAndDecimalsExample1} alt="小数の仕組み" class="diagram" />
 
-  <p>1の位が2ということは</p>
+  <p>一の位が2ということは</p>
 
   <style>
     .diagram {
       width: 100%; /* 表示したい横幅 */
       max-width: 500px; /* 横幅の上限 */
-      height: 120px; /* 高さ（余白を削るために低めに設定） */
+      height: 140px; /* 高さ（余白を削るために低めに設定） */
       object-fit: cover; /* 枠に合わせて画像を拡大＆はみ出た余白をカット */
       object-position: center; /* 画像の中心（文字の部分）を基準に表示 */
       display: block;
