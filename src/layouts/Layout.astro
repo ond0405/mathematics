@@ -25,6 +25,13 @@ const { title = "保護者の味方のおうち算数" } = Astro.props;
     <!-- ブラウザのタブに表示されるアイコン設定 -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
+    <!-- 機種によらないフォント統一 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- スマホサイズに対応する設定 -->
     <meta name="viewport" content="width=device-width" />
     <!-- Astroが初期作成してくれたファイルである証拠 -->
@@ -56,5 +63,6 @@ const { title = "保護者の味方のおうち算数" } = Astro.props;
   /* bodyタグにデフォルトでついているmargin 8pxを消す */
   body {
     margin: 0;
+    font-family: "Zen Maru Gothic", sans-serif;
   }
 </style>
