@@ -3,9 +3,7 @@
   <section class="title">
     <!-- ヘッダーのタイトルにホーム画面に戻るリンクを埋め込み -->
     <a href="/" class="header-link">
-      <h1 class="main-title">
-        保護者の味方の<span>おうち算数</span>
-      </h1>
+      <h1 class="main-title">保護者の味方のおうち算数</h1>
       <p class="sub-title">～元塾講師が教える楽しい勉強～</p>
     </a>
   </section>
@@ -65,6 +63,23 @@
     font-size: 2.5rem; /* 文字サイズ指定 */
     font-weight: bold; /* 文字太さ指定 */
     margin: 0;
+  }
+
+  /* スマホ用の設定（画面幅が 600px 以下のとき） */
+  @media (max-width: 600px) {
+    .main-title {
+      font-size: 1.2rem; /* スマホに合わせてフォントサイズを小さくする */
+    }
+
+    /* 「保護者の味方の」と「おうち算数」の間で自然に改行させたい場合 */
+    .main-title span {
+      display: block; /* スマホでは「おうち算数」を改行して2行目にする */
+      font-size: 1.5rem; /* タイトル本体（おうち算数）を少し大きめに強調 */
+    }
+
+    .sub-title {
+      font-size: 0.75rem; /* サブタイトルも小さく調整 */
+    }
   }
 
   /* class="sub-title"がついてるタグに効くCSS */
