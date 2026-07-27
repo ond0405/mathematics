@@ -1,0 +1,78 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import IntegersAndDecimalsExample1 from "../assets/images/IntegersAndDecimalsExample1.svg";
+---
+
+<!-- Layoutタグの横でtitle=○○とするとLayout.astroに値が引き渡される -->
+<Layout title="整数と小数">
+  <h2>整数と小数</h2>
+
+  <h3>1. 小数の仕組みを把握する</h3>
+  <p>まずは2.451という小数を例に小数の仕組みを見てみましょう。</p>
+  <p>いきなりですが、次の問題に取り組みましょう。</p>
+  <br />
+  <div class="question-card">
+    <p class="question-title">【問1】2.451の1の位の数字は何でしょう。</p>
+    <details class="answer-box">
+      <summary>問1の解答を見る</summary>
+      <div class="answer-content">
+        <p>答え：<strong>2</strong></p>
+        <p>解説：小数点のすぐ左隣の位が1の位である。</p>
+      </div>
+    </details>
+
+    <p class="question-title">【問2】2.451の小数第一位の数字は何でしょう。</p>
+    <details class="answer-box">
+      <summary>問2の解答を見る</summary>
+      <div class="answer-content">
+        <p>答え：<strong>4</strong></p>
+        <p>解説：小数点のすぐ右隣の位が小数第一位である。</p>
+      </div>
+    </details>
+
+    <p class="question-title">【問3】2.451の小数第二位の数字は何でしょう。</p>
+    <details class="answer-box">
+      <summary>問3の解答を見る</summary>
+      <div class="answer-content">
+        <p>答え：<strong>5</strong></p>
+        <p>解説：小数点の右隣の右隣の位が小数第二位である。</p>
+      </div>
+    </details>
+
+    <p class="question-title">【問4】2.451の小数第三位の数字は何でしょう。</p>
+    <details class="answer-box">
+      <summary>問4の解答を見る</summary>
+      <div class="answer-content">
+        <p>答え：<strong>1</strong></p>
+        <p>解説：小数点の右隣の右隣の右隣の位が小数第三位である。</p>
+      </div>
+    </details>
+  </div>
+  <br />
+  <br />
+  <p>
+    上記の問題をもとに、1の位、小数第一位、小数第二位、小数第三位に分けて考えると下の式のようになります。
+  </p>
+  <Image src={IntegersAndDecimalsExample1} alt="小数の仕組み" class="diagram" />
+
+  <p>1の位が2ということは</p>
+
+  <style>
+    .diagram {
+      width: 100%; /* 表示したい横幅 */
+      max-width: 500px; /* 横幅の上限 */
+      height: 120px; /* 高さ（余白を削るために低めに設定） */
+      object-fit: cover; /* 枠に合わせて画像を拡大＆はみ出た余白をカット */
+      object-position: center; /* 画像の中心（文字の部分）を基準に表示 */
+      display: block;
+    }
+
+    h2 {
+      border: 3px solid #008000; /* 線の太さ 種類 色 */
+      padding: 10px 16px; /* 枠線と文字の間の余白 */
+      border-radius: 6px; /* 角を少し丸くする */
+      background-color: #ffffff;
+    }
+  </style>
+</Layout>
