@@ -2,12 +2,27 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import IntegersAndDecimalsExample1 from "../assets/images/IntegersAndDecimalsExample1.svg";
+import IntegersAndDecimalsExample2 from "../assets/images/IntegersAndDecimalsExample2.svg";
+import IntegersAndDecimalsExample3 from "../assets/images/IntegersAndDecimalsExample3.svg";
+import IntegersAndDecimalsExample4 from "../assets/images/IntegersAndDecimalsExample4.svg";
+import IntegersAndDecimalsExample5 from "../assets/images/IntegersAndDecimalsExample5.svg";
 import IntegersAndDecimalsAnswer1 from "../assets/images/IntegersAndDecimalsAnswer1.svg";
 ---
 
 <!-- Layoutタグの横でtitle=○○とするとLayout.astroに値が引き渡される -->
 <Layout title="整数と小数">
   <h2>整数と小数</h2>
+
+  <div class="unit-goal">
+    <h3>この単元のゴール</h3>
+    <ul>
+      <li>小数を位ごとに分けた考え方ができる</li>
+      <li>10、100、1000倍した時の小数点の動きを理解できる</li>
+      <li>1/10、1/100、1/1000倍した時の小数点の動きを理解できる</li>
+    </ul>
+  </div>
+
+  <br />
 
   <h3>1. 小数の仕組みを把握する</h3>
   <p>まずは2.451という小数を例に小数の仕組みを見てみましょう。</p>
@@ -20,10 +35,10 @@ import IntegersAndDecimalsAnswer1 from "../assets/images/IntegersAndDecimalsAnsw
     <details class="answer-box">
       <summary>問1の解答を見る</summary>
       <div class="answer-content">
-        <p>
+        <div class="answer">
           答え：一の位：<strong>2</strong>、小数第一位：<strong>4</strong
           >、小数第二位：<strong>5</strong>、小数第三位：<strong>1</strong>
-        </p>
+        </div>
         <p>解説：</p>
         <Image
           src={IntegersAndDecimalsAnswer1}
@@ -35,21 +50,310 @@ import IntegersAndDecimalsAnswer1 from "../assets/images/IntegersAndDecimalsAnsw
   </div>
   <br />
   <br />
+  <p>問1は解けたでしょうか。</p>
+  <p>一の位が2ということは、1が2個あるということです。</p>
   <p>
-    上記の問題をもとに、一の位、小数第一位、小数第二位、小数第三位に分けて考えると下の式のようになります。
+    もしこれに対しお子様に「なんで？」と質問されたら、「そういうものなんだよ」と答えてあげてください。
   </p>
+  <p>
+    これを考え始めるのは、算数のルールを決めた人はなぜこういうルールにしたんだろうと考えているのと同じだからです。
+  </p>
+  <p>同様に、小数第一位が4ということは、0.1が4個あるということです。</p>
+  <p>小数第二位が5ということは、0.01が5個あるということです。</p>
+  <p>小数第三位が1ということは、0.001が1個あるということです。</p>
+  <p>これを式にすると下記のようになります。</p>
   <Image src={IntegersAndDecimalsExample1} alt="小数の仕組み" class="diagram" />
+  <p>この位ごとの分け方を問題を解いて練習しましょう。</p>
+  <br />
 
-  <p>一の位が2ということは</p>
+  <div class="question-card">
+    <p class="question-title">【問1】□に当てはまる数字は何でしょう。</p>
+    <p>8.769 = 1 × □ + 0.1 × □ + 0.01 × □ + 0.001 × □</p>
+    <details class="answer-box">
+      <summary>問1の解答を見る</summary>
+      <div class="answer-content">
+        <div class="answer">
+          答え：8.769 = 1 × 8⃣ + 0.1 × 7⃣ + 0.01 × 6⃣ + 0.001 × 9⃣
+        </div>
+        <p>解説：一の位が8ということは1が8個あるということで1×8。</p>
+        <p>小数第一位が7ということは0.1が7個あるということで0.1×7。</p>
+        <p>小数第二位が6ということは0.01が6個あるということで0.01×6。</p>
+        <p>小数第三位が9ということは0.001が9個あるということで0.001×9。</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="question-card">
+    <p class="question-title">【問2】□に当てはまる数字は何でしょう。</p>
+    <p>5.303 = 1 × □ + 0.1 × □ + 0.01 × □ + 0.001 × □</p>
+    <details class="answer-box">
+      <summary>問2の解答を見る</summary>
+      <div class="answer-content">
+        <div class="answer">
+          答え：5.303 = 1 × 5⃣ + 0.1 × 3⃣ + 0.01 × 0⃣ + 0.001 × 3⃣
+        </div>
+        <p>解説：一の位が5ということは1が5個あるということで1×5。</p>
+        <p>小数第一位が3ということは0.1が3個あるということで0.1×3。</p>
+        <p>小数第二位が0ということは0.01が0個あるということで0.01×0。</p>
+        <p>小数第三位が3ということは0.001が3個あるということで0.001×3。</p>
+      </div>
+    </details>
+  </div>
+  <br />
+
+  <p>次は位で分けて考えられるようになったところを応用していきます。</p>
+  <p>2.451は0.001を何個集めた数かを考えましょう。</p>
+  <p>
+    もう、2.451は1が2個、0.1が4個、0.01が5個、0.001が1個と答えられるようになっているはずですが、
+  </p>
+  <p>これを0.001を何個集めたかに変換する必要があります。</p>
+  <br />
+
+  <p>まず、「1が2個」の部分は0.001が何個分なのかを考えていきましょう。</p>
+  <p>1は0.1を10個集めたものです。</p>
+  <p>
+    したがって「1が2個」は「0.1を10個集めたものが2個」に言い換えることができます。
+  </p>
+  <p>
+    そして「0.1を10個集めたものが2個」は「0.1が20個」に言い換えることができます。
+  </p>
+  <br />
+  <p>また、0.1は0.01を10個集めたものです。</p>
+  <p>
+    したがって「0.1が20個」は「0.01を10個集めたものが20個」に言い換えることができます。
+  </p>
+  <p>
+    そして「0.01を10個集めたものが20個」は「0.01が200個」に言い換えることができます。
+  </p>
+  <br />
+  <p>最後に、0.01は0.001を10個集めたものです。</p>
+  <p>
+    したがって「0.01が200個」は「0.001を10個集めたものが200個」に言い換えることができます。
+  </p>
+  <p>
+    そして「0.001を10個集めたものが200個」は「0.001が2000個」に言い換えることができます。
+  </p>
+  <br />
+  <p>
+    長かったですが、これで「1が2個」は「0.001が2000個」に言い換えることができました。
+  </p>
+  <p>
+    この考えで「0.1が4個」、「0.01が5個」を言い換えると「0.001が400個」、「0.001が50個」となります。
+  </p>
+  <p>
+    「2.451は1が2個、0.1が4個、0.01が5個、0.001が1個」は「2.451は0.001が2000個、0.001が400個、0.001が50個、0.001が1個」に言い換えることができました。
+  </p>
+  <p>
+    ここで問題の2.451は0.001を何個集めた数かを考えると、「2.451は0.001が2000個、0.001が400個、0.001が50個、0.001が1個」から
+  </p>
+  <p>2000 + 400 + 50 + 1 = 2451</p>
+  <p>したがって、2.451は0.001を2451個集めた数となります。</p>
+
+  <p>それでは、類似問題を解いていきましょう。</p>
+  <br />
+
+  <div class="question-card">
+    <p class="question-title">【問1】0.007は0.001を何個集めた数でしょうか。</p>
+    <details class="answer-box">
+      <summary>問1の解答を見る</summary>
+      <div class="answer-content">
+        <div class="answer">答え：7個</div>
+        <p>解説：1が0個、0.1が0個、0.01が0個、0.001が3個。</p>
+        <p>言い換えると0.001が0個、0.001が0個、0.001が0個、0.001が7個。</p>
+        <p>0 + 0 + 0 + 7 = 7</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="question-card">
+    <p class="question-title">【問2】0.091は0.001を何個集めた数でしょうか。</p>
+    <details class="answer-box">
+      <summary>問2の解答を見る</summary>
+      <div class="answer-content">
+        <div class="answer">答え：91個</div>
+        <p>解説：1が0個、0.1が0個、0.01が9個、0.001が1個。</p>
+        <p>言い換えると0.001が0個、0.001が0個、0.001が90個、0.001が1個。</p>
+        <p>0 + 0 + 90 + 1 = 91</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="question-card">
+    <p class="question-title">【問3】0.206は0.001を何個集めた数でしょうか。</p>
+    <details class="answer-box">
+      <summary>問3の解答を見る</summary>
+      <div class="answer-content">
+        <div class="answer">答え：206個</div>
+        <p>解説：1が0個、0.1が2個、0.01が0個、0.001が6個。</p>
+        <p>言い換えると0.001が0個、0.001が200個、0.001が0個、0.001が6個。</p>
+        <p>0 + 200 + 0 + 6 = 206</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="question-card">
+    <p class="question-title">【問4】8.5は0.001を何個集めた数でしょうか。</p>
+    <details class="answer-box">
+      <summary>問4の解答を見る</summary>
+      <div class="answer-content">
+        <div class="answer">答え：8500個</div>
+        <p>解説：1が8個、0.1が5個、0.01が0個、0.001が0個。</p>
+        <p>言い換えると0.001が8000個、0.001が500個、0.001が0個、0.001が0個。</p>
+        <p>8000 + 500 + 0 + 0 = 8500</p>
+        <p>
+          8.5は小数第二位、小数第三位が書いていないが、その時は0が書いてあると考える。
+        </p>
+      </div>
+    </details>
+  </div>
+  <br />
+
+  <h3>2. 小数の10倍、100倍、1000倍</h3>
+
+  <p>次に、小数を10倍、100倍、1000倍した時にどうなるかを理解しましょう。</p>
+  <p>2.541を例にします。</p>
+  <p>2.541を10倍にすると、25.41になります。</p>
+
+  <Image src={IntegersAndDecimalsExample2} alt="10倍の仕組み" class="diagram" />
+
+  <p>上記の画像のように、10倍すると小数点を右に一つずらした数字になります。</p>
+  <br />
+
+  <p>では、2.541を100倍したらどうなるでしょうか。</p>
+  <Image
+    src={IntegersAndDecimalsExample3}
+    alt="100倍の仕組み"
+    class="diagram"
+  />
+
+  <p>答えは254.1です。</p>
+  <p>上記の画像のように、100倍すると小数点を右に二つずらした数字になります。</p>
+  <br />
+
+  <p>2.541を1000倍したら答えは2541です。</p>
+  <Image
+    src={IntegersAndDecimalsExample4}
+    alt="1000倍の仕組み"
+    class="diagram"
+  />
+
+  <p>
+    上記の画像のように、1000倍すると小数点を右に三つずらした数字になります。
+  </p>
+  <p>
+    ずらした結果、小数点より右に数字がないのであれば小数点は消してしまっていいのがポイントです。
+  </p>
+
+  <p>ちなみに、2.541を10000倍したら答えは25410です。</p>
+  <Image
+    src={IntegersAndDecimalsExample5}
+    alt="10000倍の仕組み"
+    class="diagram"
+  />
+
+  <p>
+    上記の画像のように、10000倍すると小数点を右に四つずらした数字になります。
+  </p>
+  <p>
+    これより右には数字はないけどまだ右に小数点を動かさないといけないときは、勝手に0をつけましょう。
+  </p>
+  <p>これらのルールを踏まえて、問題に取り組みましょう。</p>
+  <br />
+
+  <div class="question-card">
+    <p class="question-title">【問1】63.9は6.39を何倍した数ですか。</p>
+    <details class="answer-box">
+      <summary>問1の解答を見る</summary>
+      <div class="answer-content">
+        <div class="answer">答え：10倍</div>
+        <p>解説：6.39と63.9を見比べると小数点が1個右にずれている。</p>
+        <p>
+          6.39を何倍かしたときに小数点を1個右にずらしたいということは、10倍となる。
+        </p>
+      </div>
+    </details>
+  </div>
+
+  <div class="question-card">
+    <p class="question-title">【問2】639は6.39を何倍した数ですか。</p>
+    <details class="answer-box">
+      <summary>問2の解答を見る</summary>
+      <div class="answer-content">
+        <div class="answer">答え：100倍</div>
+        <p>解説：6.39と639を見比べると小数点が2個右にずれている。</p>
+        <p>
+          6.39を何倍かしたときに小数点を2個右にずらしたいということは、100倍となる。
+        </p>
+      </div>
+    </details>
+  </div>
+
+  <div class="question-card">
+    <p class="question-title">【問3】6390は6.39を何倍した数ですか。</p>
+    <details class="answer-box">
+      <summary>問3の解答を見る</summary>
+      <div class="answer-content">
+        <div class="answer">答え：1000倍</div>
+        <p>解説：6.39と6390を見比べると小数点が3個右にずれている。</p>
+        <p>
+          6.39を何倍かしたときに小数点を3個右にずらしたいということは、1000倍となる。
+        </p>
+      </div>
+    </details>
+  </div>
+
+  <div class="question-card">
+    <p class="question-title">
+      【問4】9.99 × 10を計算すると答えはいくつでしょう。
+    </p>
+    <details class="answer-box">
+      <summary>問4の解答を見る</summary>
+      <div class="answer-content">
+        <div class="answer">答え：99.9</div>
+        <p>
+          解説：9.99に10をかけるということは9.99の小数点を1個右にずらすということ。
+        </p>
+      </div>
+    </details>
+  </div>
+
+  <div class="question-card">
+    <p class="question-title">
+      【問5】60.4 × 1000を計算すると答えはいくつでしょう。
+    </p>
+    <details class="answer-box">
+      <summary>問5の解答を見る</summary>
+      <div class="answer-content">
+        <div class="answer">答え：60400</div>
+        <p>
+          解説：60.4に1000をかけるということは60.4の小数点を3個右にずらすということ。
+        </p>
+      </div>
+    </details>
+  </div>
+
+  <div class="question-card">
+    <p class="question-title">
+      【問6】5.47 × 100を計算すると答えはいくつでしょう。
+    </p>
+    <details class="answer-box">
+      <summary>問6の解答を見る</summary>
+      <div class="answer-content">
+        <div class="answer">答え：547</div>
+        <p>
+          解説：5.47に100をかけるということは5.47の小数点を2個右にずらすということ。
+        </p>
+      </div>
+    </details>
+  </div>
 
   <style>
     .diagram {
       width: 100%; /* 表示したい横幅 */
       max-width: 500px; /* 横幅の上限 */
-      height: 140px; /* 高さ（余白を削るために低めに設定） */
-      object-fit: cover; /* 枠に合わせて画像を拡大＆はみ出た余白をカット */
-      object-position: center; /* 画像の中心（文字の部分）を基準に表示 */
+      height: auto; /* 高さ */
       display: block;
+      margin: 1rem 0;
     }
 
     h2 {
@@ -64,6 +368,23 @@ import IntegersAndDecimalsAnswer1 from "../assets/images/IntegersAndDecimalsAnsw
       padding: 10px 16px; /* 枠線と文字の間の余白 */
       border-radius: 6px; /* 角を少し丸くする */
       background-color: #ffffff;
+      box-sizing: border-box; /* ★パディング分のはみ出しを防ぐ */
+    }
+
+    .answer {
+      color: red;
+    }
+
+    .unit-goal {
+      border: 1px solid #008000; /* 線の太さ 種類 色 */
+      padding: 10px 16px; /* 枠線と文字の間の余白 */
+      border-radius: 6px; /* 角を少し丸くする */
+      background-color: #ffffff;
+      box-sizing: border-box; /* ★パディング分のはみ出しを防ぐ */
+    }
+
+    .unit-goal h3 {
+      color: #008000;
     }
   </style>
 </Layout>
