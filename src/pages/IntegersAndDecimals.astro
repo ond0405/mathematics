@@ -6,6 +6,10 @@ import IntegersAndDecimalsExample2 from "../assets/images/IntegersAndDecimalsExa
 import IntegersAndDecimalsExample3 from "../assets/images/IntegersAndDecimalsExample3.svg";
 import IntegersAndDecimalsExample4 from "../assets/images/IntegersAndDecimalsExample4.svg";
 import IntegersAndDecimalsExample5 from "../assets/images/IntegersAndDecimalsExample5.svg";
+import IntegersAndDecimalsExample6 from "../assets/images/IntegersAndDecimalsExample6.svg";
+import IntegersAndDecimalsExample7 from "../assets/images/IntegersAndDecimalsExample7.svg";
+import IntegersAndDecimalsExample8 from "../assets/images/IntegersAndDecimalsExample8.svg";
+import IntegersAndDecimalsExample9 from "../assets/images/IntegersAndDecimalsExample9.svg";
 import IntegersAndDecimalsAnswer1 from "../assets/images/IntegersAndDecimalsAnswer1.svg";
 ---
 
@@ -342,6 +346,212 @@ import IntegersAndDecimalsAnswer1 from "../assets/images/IntegersAndDecimalsAnsw
         <div class="answer">答え：547</div>
         <p>
           解説：5.47に100をかけるということは5.47の小数点を2個右にずらすということ。
+        </p>
+      </div>
+    </details>
+  </div>
+  <br />
+
+  <h3>3. 小数の1/10、1/100、1/1000</h3>
+
+  <p>次に、小数を1/10、1/100、1/1000にした時にどうなるかを理解しましょう。</p>
+  <p>245.1を例にします。</p>
+  <p>245.1を1/10にすると、24.51になります。</p>
+
+  <Image src={IntegersAndDecimalsExample6} alt="1/10の仕組み" class="diagram" />
+
+  <p>
+    上記の画像のように、1/10にすると小数点を左に一つずらした数字になります。
+  </p>
+  <br />
+
+  <p>では、245.1を1/100にしたらどうなるでしょうか。</p>
+  <Image
+    src={IntegersAndDecimalsExample7}
+    alt="1/100の仕組み"
+    class="diagram"
+  />
+
+  <p>答えは2.451です。</p>
+  <p>
+    上記の画像のように、1/100にすると小数点を左に二つずらした数字になります。
+  </p>
+  <br />
+
+  <p>245.1を1/1000したら答えは0.2451です。</p>
+  <Image
+    src={IntegersAndDecimalsExample8}
+    alt="1/1000の仕組み"
+    class="diagram"
+  />
+
+  <p>
+    上記の画像のように、1/1000すると小数点を左に三つずらした数字になります。
+  </p>
+  <p>
+    ずらした結果、小数点より左に数字がないのであれば小数点の左に0をつけるのがポイントです。
+  </p>
+  <br />
+
+  <p>ちなみに、245.1を1/10000したら答えは0.02451です。</p>
+  <Image
+    src={IntegersAndDecimalsExample9}
+    alt="10000倍の仕組み"
+    class="diagram"
+  />
+
+  <p>
+    上記の画像のように、1/10000にすると小数点を左に四つずらした数字になります。
+  </p>
+  <p>
+    これより左に行くと小数点の右にスペースができてしまうというときは、勝手に0をつけましょう。
+  </p>
+  <p>これらのルールを踏まえて、問題に取り組みましょう。</p>
+  <br />
+
+  <div class="question-card">
+    <p class="question-title">【問1】4.92は49.2を何分の一にした数ですか。</p>
+    <details class="answer-box">
+      <summary>問1の解答を見る</summary>
+      <div class="answer-content">
+        <div class="answer">答え：1/10</div>
+        <p>解説：49.2と4.92を見比べると小数点が1個左にずれている。</p>
+        <p>
+          49.2を何分の一かしたときに小数点を1個左にずらしたいということは、1/10となる。
+        </p>
+      </div>
+    </details>
+  </div>
+
+  <div class="question-card">
+    <p class="question-title">【問2】0.492は49.2を何分の一にした数ですか。</p>
+    <details class="answer-box">
+      <summary>問2の解答を見る</summary>
+      <div class="answer-content">
+        <div class="answer">答え：1/100</div>
+        <p>解説：49.2と0.492を見比べると小数点が2個左にずれている。</p>
+        <p>
+          49.2を何分の一かしたときに小数点を2個左にずらしたいということは、1/100となる。
+        </p>
+      </div>
+    </details>
+  </div>
+
+  <div class="question-card">
+    <p class="question-title">【問3】0.0492は49.2を何分の一にした数ですか。</p>
+    <details class="answer-box">
+      <summary>問3の解答を見る</summary>
+      <div class="answer-content">
+        <div class="answer">答え：1/1000</div>
+        <p>解説：49.2と0.0492を見比べると小数点が3個左にずれている。</p>
+        <p>
+          49.2を何分の一かしたときに小数点を3個左にずらしたいということは、1/1000となる。
+        </p>
+      </div>
+    </details>
+  </div>
+
+  <div class="question-card">
+    <p class="question-title">
+      【問4】32.1 ÷ 10を計算すると答えはいくつでしょう。
+    </p>
+    <details class="answer-box">
+      <summary>問4の解答を見る</summary>
+      <div class="answer-content">
+        <div class="answer">答え：3.21</div>
+        <p>
+          解説：32.1を10で割るということは32.1の小数点を1個左にずらすということ。
+        </p>
+      </div>
+    </details>
+  </div>
+
+  <div class="question-card">
+    <p class="question-title">
+      【問5】81.79 ÷ 1000を計算すると答えはいくつでしょう。
+    </p>
+    <details class="answer-box">
+      <summary>問5の解答を見る</summary>
+      <div class="answer-content">
+        <div class="answer">答え：0.08179</div>
+        <p>
+          解説：81.79を1000で割るということは81.79の小数点を3個左にずらすということ。
+        </p>
+      </div>
+    </details>
+  </div>
+
+  <div class="question-card">
+    <p class="question-title">
+      【問6】58.4 ÷ 100を計算すると答えはいくつでしょう。
+    </p>
+    <details class="answer-box">
+      <summary>問6の解答を見る</summary>
+      <div class="answer-content">
+        <div class="answer">答え：0.584</div>
+        <p>
+          解説：58.4を100で割るということは58.4の小数点を2個左にずらすということ。
+        </p>
+      </div>
+    </details>
+  </div>
+  <br />
+
+  <h3>4. その他応用問題</h3>
+
+  <p>整数と小数の仕組みを理解したら、少し難しい問題にも挑戦してみましょう。</p>
+  <p>まずは不等号の問題です。</p>
+  <p>不等号とは、「＜」と「＞」の2つの事です。</p>
+  <p>
+    数字と数字の間に書く記号で、二つの数字のどっちが大きいかを教えてくれます。
+  </p>
+  <p>
+    「＜」と「＞」のどっちも、開いてる方の数字が大きくて、とんがってる方の数字が小さいという意味です。
+  </p>
+  <br />
+
+  <div class="question-card">
+    <p class="question-title">【問1】□に当てはまる不等号は何でしょう。</p>
+    <p>0.01 □ 0</p>
+    <details class="answer-box">
+      <summary>問1の解答を見る</summary>
+      <div class="answer-content">
+        <div class="answer">答え：＞</div>
+        <p>解説：不等号は何かを聞かれているので「＜」と「＞」の2択。</p>
+        <p>0.01と0は、0.01の方が大きいので、0.01がある左側が開いてる「＞」。</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="question-card">
+    <p class="question-title">【問2】□に当てはまる不等号は何でしょう。</p>
+    <p>9.999 □ 10</p>
+    <details class="answer-box">
+      <summary>問2の解答を見る</summary>
+      <div class="answer-content">
+        <div class="answer">答え：＜</div>
+        <p>解説：不等号は何かを聞かれているので「＜」と「＞」の2択。</p>
+        <p>9.999と10は、10の方が大きいので、10がある右側が開いてる「＜」。</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="question-card">
+    <p class="question-title">【問3】□に当てはまる不等号は何でしょう。</p>
+    <p>3 □ 7.66 - 4.5</p>
+    <details class="answer-box">
+      <summary>問3の解答を見る</summary>
+      <div class="answer-content">
+        <div class="answer">答え：＜</div>
+        <p>解説：不等号は何かを聞かれているので「＜」と「＞」の2択。</p>
+        <p>
+          今回は右側の7.66 -
+          4.5の計算から始めなければ、右側がいくつかわからないから不等号が決められない。
+        </p>
+        <p>7.66 - 4.5 = 3.16</p>
+        <p>
+          3と3.16は、3.16の方が大きいので、7.66 -
+          4.5がある右側が開いてる「＜」。
         </p>
       </div>
     </details>
