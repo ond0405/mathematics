@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import IntegersAndDecimalsExample1 from "../assets/images/IntegersAndDecimals/IntegersAndDecimalsExample1.svg";
+import VolumeOfCuboidsAndCubesExample1 from "../assets/images/VolumeOfCuboidsAndCubes/VolumeOfCuboidsAndCubesExample1.svg";
 import IntegersAndDecimalsExample2 from "../assets/images/IntegersAndDecimals/IntegersAndDecimalsExample2.svg";
 import IntegersAndDecimalsExample3 from "../assets/images/IntegersAndDecimals/IntegersAndDecimalsExample3.svg";
 import IntegersAndDecimalsExample4 from "../assets/images/IntegersAndDecimals/IntegersAndDecimalsExample4.svg";
@@ -14,24 +14,42 @@ import IntegersAndDecimalsAnswer1 from "../assets/images/IntegersAndDecimals/Int
 ---
 
 <!-- Layoutタグの横でtitle=○○とするとLayout.astroに値が引き渡される -->
-<Layout title="整数と小数">
-  <h2>整数と小数</h2>
+<Layout title="直方体や立方体の体積">
+  <h2>直方体や立方体の体積</h2>
 
   <div class="unit-goal">
     <h3>この単元のゴール</h3>
     <ul>
-      <li>小数を位ごとに分けた考え方ができる</li>
-      <li>10、100、1000倍した時の小数点の動きを理解する</li>
-      <li>1/10、1/100、1/1000倍した時の小数点の動きを理解する</li>
+      <li>直方体、立方体とは何かを知る。</li>
+      <li>体積とは何かを知る。</li>
+      <li>展開図が理解できる。</li>
+      <li>直方体、立方体の体積を計算できる。</li>
+      <li>複雑な形の立体の体積を計算できる。</li>
     </ul>
   </div>
 
   <br />
 
-  <h3>1. 小数の仕組みを把握する</h3>
-  <p>まずは2.451という小数を例に小数の仕組みを見てみましょう。</p>
-  <p>仕組みを理解するために、次の問題に取り組みましょう。</p>
+  <h3>1. 直方体、立方体とは何か</h3>
+  <p>直方体とは何でしょうか。立方体とは何でしょうか。</p>
+  <p>この単元ではたくさん出てくる言葉です。</p>
+  <p>何を指している言葉かしっかり理解しましょう。</p>
   <br />
+
+  <p>まずは立方体から確認しましょう。</p>
+  <Image
+    src={VolumeOfCuboidsAndCubesExample1}
+    alt="立方体画像"
+    class="diagram"
+  />
+  <p>
+    上記画像のように、すべての辺の長さが同じの立体的な四角形を立方体といいます。
+  </p>
+  <p>言い方を変えると、立方体は正方形を立体的にしたものです。</p>
+  <p>立方体は正方形を6枚使って作った箱です。</p>
+  <p>正方形と立方体は必ず区別しましょう。</p>
+  <p>正方形は平面で、立方体は立体です。</p>
+
   <div class="question-card">
     <p class="question-title">
       【問1】2.451の一の位、小数第一位、小数第二位、小数第三位の数字は何でしょう。
@@ -66,7 +84,6 @@ import IntegersAndDecimalsAnswer1 from "../assets/images/IntegersAndDecimals/Int
   <p>小数第二位が5ということは、0.01が5個あるということです。</p>
   <p>小数第三位が1ということは、0.001が1個あるということです。</p>
   <p>これを式にすると下記のようになります。</p>
-  <Image src={IntegersAndDecimalsExample1} alt="小数の仕組み" class="diagram" />
   <p>この位ごとの分け方を問題を解いて練習しましょう。</p>
   <br />
 
